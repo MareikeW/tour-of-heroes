@@ -1,0 +1,13 @@
+<!--Template von Komponente-->
+
+<!--Data binding to the new hero property-->
+<!--{{ expression }}-->
+<!--Sollte sich die Property hero ändern, z. B. durch externe Events, 
+    wird diese automatisch von Angular aktualisiert. Dieses Konzept nennt 
+    sich Data-Binding.-->
+
+<!-- "|": pipe operator + "uppercase" aktiviert die eingebaute UppercasePipe-->
+<!--Mit Pipes können Strings, Währungen, Daten, etc. formatiert werden.-->
+<h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div><span>name: </span>{{ hero.name }}</div>
