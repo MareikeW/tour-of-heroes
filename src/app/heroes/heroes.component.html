@@ -21,16 +21,7 @@
   </li>
 </ul>
 
-<div *ngIf="selectedHero">
-
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 <!--Users should be able to edit the hero name in an <input> textbox.
 The textbox should both display the hero's name property and update that 
@@ -44,7 +35,9 @@ form element and the hero.name property.-->
 Here it binds the hero.name property to the HTML textbox so that 
 data can flow in both directions: from the hero.name property to the 
 textbox, and from the textbox back to the hero.name.-->
+<!--
 <div>
     <label for="name">Hero name: </label>
     <input id="name" [(ngModel)]="hero.name" placeholder="name">
 </div>
+-->

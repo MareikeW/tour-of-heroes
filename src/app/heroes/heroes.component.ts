@@ -45,7 +45,7 @@ import { HEROES } from "../mock-heroes"; // imports mock-heroes
 */
 /* ngOnInit() ist eine Lifecycle-Hook, die Angular kurz nach Komponentenerstellung ruft. Darin sollte Initialisierungslogik platziert werden */
 /* Die Komponentenklasse wird exportiert, damit sie irgendwoanders importiert werden kann */
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
 
@@ -59,7 +59,7 @@ export class HeroesComponent implements OnInit {
 
   heroes = HEROES;
   selectedHero?: Hero;
-  @Input() hero?: Hero;
+
   constructor() { }
 
   ngOnInit() {
