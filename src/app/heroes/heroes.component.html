@@ -7,7 +7,44 @@
     sich Data-Binding.-->
 
 <!-- "|": pipe operator + "uppercase" aktiviert die eingebaute UppercasePipe-->
-<!--Mit Pipes können Strings, Währungen, Daten, etc. formatiert werden.-->
+<!--Mit Pipes können Strings, Währungen, Daten, etc. formatiert werden.
 <h2>{{ hero.name | uppercase }} Details</h2>
 <div><span>id: </span>{{ hero.id }}</div>
-<div><span>name: </span>{{ hero.name }}</div>
+<div><span>name: </span>{{ hero.name }}</div>-->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+
+<div *ngIf="selectedHero">
+
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+  
+  </div>
+
+<!--Users should be able to edit the hero name in an <input> textbox.
+The textbox should both display the hero's name property and update that 
+property as the user types. That means data flows from the component class out 
+to the screen and from the screen back to the class.
+To automate that data flow, setup a two-way data binding between the <input> 
+form element and the hero.name property.-->
+
+<!--[(ngModel)] is Angular's two-way data binding syntax.
+
+Here it binds the hero.name property to the HTML textbox so that 
+data can flow in both directions: from the hero.name property to the 
+textbox, and from the textbox back to the hero.name.-->
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
